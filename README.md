@@ -22,4 +22,4 @@ BukkitFlyはBukkitプラグイン作成時に、何度も書いている処理�
 
 # ファンクション一覧
 
-BukkitFlyで利用できるファンクションの一覧は[こちら]()
+BukkitFlyで利用できるファンクションの一覧は[こちら](https://github.com/Bun133/BukkitFly/blob/main/Functions.md)
