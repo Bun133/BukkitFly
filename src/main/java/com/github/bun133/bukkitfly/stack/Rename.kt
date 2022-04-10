@@ -6,7 +6,7 @@ import org.bukkit.inventory.meta.ItemMeta
 
 fun ItemStack.rename(comp: TextComponent) {
     this.editMeta {
-        rename(comp)
+        it.rename(comp)
     }
 }
 
