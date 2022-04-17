@@ -9,13 +9,12 @@ import java.util.UUID
 
 fun Player.toast(toastData: ToastData, plugin: Plugin) {
     try {
+        Bukkit.getUnsafe().removeAdvancement(NamespacedKey("bukkitfly", "toast${toastData.uuid}"))
         Bukkit.getUnsafe().loadAdvancement(NamespacedKey("bukkitfly", "toast${toastData.uuid}"), toastData.toJson())
         val adv = Bukkit.getAdvancement(NamespacedKey("bukkitfly", "toast${toastData.uuid}"))!!
         this.getAdvancementProgress(adv).also {
             it.revokeCriteria("impossible")
-            Bukkit.getServer().scheduler.runTaskLater(plugin, Runnable {
-                it.awardCriteria("impossible")
-            }, 1)
+            it.awardCriteria("impossible")
         }
     } catch (e: java.lang.IllegalArgumentException) {
         return
