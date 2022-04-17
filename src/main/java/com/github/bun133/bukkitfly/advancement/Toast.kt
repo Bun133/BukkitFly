@@ -4,15 +4,18 @@ import org.bukkit.Bukkit
 import org.bukkit.Material
 import org.bukkit.NamespacedKey
 import org.bukkit.entity.Player
+import org.bukkit.plugin.Plugin
 import java.util.UUID
 
-fun Player.toast(toastData: ToastData) {
+fun Player.toast(toastData: ToastData, plugin: Plugin) {
     try {
         Bukkit.getUnsafe().loadAdvancement(NamespacedKey("bukkitfly", "toast${toastData.uuid}"), toastData.toJson())
         val adv = Bukkit.getAdvancement(NamespacedKey("bukkitfly", "toast${toastData.uuid}"))!!
         this.getAdvancementProgress(adv).also {
             it.revokeCriteria("impossible")
-            it.awardCriteria("impossible")
+            Bukkit.getServer().scheduler.runTaskLater(plugin, Runnable {
+                it.awardCriteria("impossible")
+            }, 1)
         }
     } catch (e: java.lang.IllegalArgumentException) {
         return
