@@ -3,6 +3,7 @@
 ・[HumanEntity](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#humanentity)
 ・[Component](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#component)
 ・[FireWork](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#firework)
+・[Advancement](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#advancement)
 
 # HumanEntity
 
@@ -21,3 +22,9 @@
 | ファイル名                                                                                                                                            | ファイル内容     |
 |--------------------------------------------------------------------------------------------------------------------------------------------------|------------|
 | [FireWork.FireworkUtil](https://github.com/Bun133/BukkitFly/blob/main/src/main/java/com/github/bun133/bukkitfly/entity/firework/FireworkUtil.kt) | 花火系のUtilです |
+
+# Advancement
+
+| ファイル名                                                                                                                             | ファイル内容                  |
+|-----------------------------------------------------------------------------------------------------------------------------------|-------------------------|
+| [Advancement.Toast](https://github.com/Bun133/BukkitFly/blob/main/src/main/java/com/github/bun133/bukkitfly/advancement/Toast.kt) | 実績を使ってプレイヤーにToastを表示します |
