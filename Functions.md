@@ -4,6 +4,7 @@
 ・[Component](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#component)
 ・[FireWork](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#firework)
 ・[Advancement](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#advancement)
+・[ItemStack](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#itemstack)
 
 # HumanEntity
 
@@ -28,3 +29,9 @@
 | ファイル名                                                                                                                             | ファイル内容                  |
 |-----------------------------------------------------------------------------------------------------------------------------------|-------------------------|
 | [Advancement.Toast](https://github.com/Bun133/BukkitFly/blob/main/src/main/java/com/github/bun133/bukkitfly/advancement/Toast.kt) | 実績を使ってプレイヤーにToastを表示します |
+
+# ItemStack
+
+| ファイル名                                                                                                                             | ファイル内容                                 |
+|-----------------------------------------------------------------------------------------------------------------------------------|----------------------------------------|
+| [ItemStack.AddOrDrop](https://github.com/Bun133/BukkitFly/blob/main/src/main/java/com/github/bun133/bukkitfly/stack/AddOrDrop.kt) | アイテムをプレイヤーのインベントリに加える、できなければ足元にドロップします |
