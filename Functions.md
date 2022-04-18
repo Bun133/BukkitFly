@@ -5,6 +5,7 @@
 ・[FireWork](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#firework)
 ・[Advancement](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#advancement)
 ・[ItemStack](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#itemstack)
+・[Inventory](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#inventory)
 
 # HumanEntity
 
@@ -35,3 +36,9 @@
 | ファイル名                                                                                                                             | ファイル内容                                 |
 |-----------------------------------------------------------------------------------------------------------------------------------|----------------------------------------|
 | [ItemStack.AddOrDrop](https://github.com/Bun133/BukkitFly/blob/main/src/main/java/com/github/bun133/bukkitfly/stack/AddOrDrop.kt) | アイテムをプレイヤーのインベントリに加える、できなければ足元にドロップします |
+
+# Inventory
+
+| ファイル名                                                                                                                                              | ファイル内容                             |
+|----------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------|
+| [Inventory.ForceRemover](https://github.com/Bun133/BukkitFly/blob/main/src/main/java/com/github/bun133/bukkitfly/inventory/player/ForceRemover.kt) | PlayerQuitEventでremoveできない現象を回避します |
