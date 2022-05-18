@@ -33,9 +33,10 @@
 
 # ItemStack
 
-| ファイル名                                                                                                                             | ファイル内容                                 |
-|-----------------------------------------------------------------------------------------------------------------------------------|----------------------------------------|
-| [ItemStack.AddOrDrop](https://github.com/Bun133/BukkitFly/blob/main/src/main/java/com/github/bun133/bukkitfly/stack/AddOrDrop.kt) | アイテムをプレイヤーのインベントリに加える、できなければ足元にドロップします |
+| ファイル名                                                                                                                                     | ファイル内容                                 |
+|-------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------|
+| [ItemStack.AddOrDrop](https://github.com/Bun133/BukkitFly/blob/main/src/main/java/com/github/bun133/bukkitfly/stack/AddOrDrop.kt)         | アイテムをプレイヤーのインベントリに加える、できなければ足元にドロップします |
+| [DelegatedItemStack](https://github.com/Bun133/BukkitFly/blob/main/src/main/java/com/github/bun133/bukkitfly/stack/DelegatedItemStack.kt) | ItemStackからデータを読み取り、'by'で移譲するためのクラスです  |
 
 # Inventory
 
