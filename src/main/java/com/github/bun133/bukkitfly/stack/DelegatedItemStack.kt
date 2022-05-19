@@ -26,6 +26,10 @@ class DelegatedItemStack(val stack: ItemStack) {
             }
         }
 
+        fun DelegatedItemStack.persistentString(key: NamespacedKey): PersistentString {
+            return PersistentString(this, key)
+        }
+
         /**
          * PersistentDataType.INTEGERを使ってDelegateする
          */
@@ -39,6 +43,10 @@ class DelegatedItemStack(val stack: ItemStack) {
             }
         }
 
+        fun DelegatedItemStack.persistentInteger(key: NamespacedKey): PersistentInteger {
+            return PersistentInteger(this, key)
+        }
+
         /**
          * PersistentDataType.LONGを使ってDelegateする
          */
@@ -50,6 +58,10 @@ class DelegatedItemStack(val stack: ItemStack) {
             operator fun setValue(thisRef: Any?, property: KProperty<*>, value: Long) {
                 d.stack.itemMeta?.persistentDataContainer?.set(key, PersistentDataType.LONG, value)
             }
+        }
+
+        fun DelegatedItemStack.persistentLong(key: NamespacedKey): PersistentLong {
+            return PersistentLong(this, key)
         }
 
         /**
@@ -73,6 +85,10 @@ class DelegatedItemStack(val stack: ItemStack) {
                 }
             }
 
+            fun DelegatedItemStack.itemMeta(): ItemMeta {
+                return ItemMeta(this)
+            }
+
             /**
              * MapMetaを使ってDelegateする
              */
@@ -88,6 +104,10 @@ class DelegatedItemStack(val stack: ItemStack) {
                 ) {
                     d.stack.itemMeta = value
                 }
+            }
+
+            fun DelegatedItemStack.mapMeta(): MapMeta {
+                return MapMeta(this)
             }
         }
     }
