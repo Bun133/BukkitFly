@@ -16,51 +16,51 @@ open class DelegatedItemStack(val stack: ItemStack) {
         /**
          * PersistentDataType.STRINGを使ってDelegateする
          */
-        class PersistentString(private val d: DelegatedItemStack, private val key: NamespacedKey) {
-            operator fun getValue(thisRef: Any?, property: KProperty<*>): String? {
+        class PersistentString<C:DelegatedItemStack>(private val d: DelegatedItemStack, private val key: NamespacedKey) {
+            operator fun getValue(thisRef: C, property: KProperty<*>): String? {
                 return d.stack.itemMeta?.persistentDataContainer?.get(key, PersistentDataType.STRING)
             }
 
-            operator fun setValue(thisRef: Any?, property: KProperty<*>, value: String) {
+            operator fun setValue(thisRef: C, property: KProperty<*>, value: String) {
                 d.stack.itemMeta?.persistentDataContainer?.set(key, PersistentDataType.STRING, value)
             }
         }
 
-        fun DelegatedItemStack.persistentString(key: NamespacedKey): PersistentString {
+        fun <C:DelegatedItemStack> C.persistentString(key: NamespacedKey): PersistentString<C> {
             return PersistentString(this, key)
         }
 
         /**
          * PersistentDataType.INTEGERを使ってDelegateする
          */
-        class PersistentInteger(private val d: DelegatedItemStack, private val key: NamespacedKey) {
-            operator fun getValue(thisRef: Any?, property: KProperty<*>): Int? {
+        class PersistentInteger<C:DelegatedItemStack>(private val d: DelegatedItemStack, private val key: NamespacedKey) {
+            operator fun getValue(thisRef: C, property: KProperty<*>): Int? {
                 return d.stack.itemMeta?.persistentDataContainer?.get(key, PersistentDataType.INTEGER)
             }
 
-            operator fun setValue(thisRef: Any?, property: KProperty<*>, value: Int) {
+            operator fun setValue(thisRef: C, property: KProperty<*>, value: Int) {
                 d.stack.itemMeta?.persistentDataContainer?.set(key, PersistentDataType.INTEGER, value)
             }
         }
 
-        fun DelegatedItemStack.persistentInteger(key: NamespacedKey): PersistentInteger {
+        fun <C:DelegatedItemStack> C.persistentInteger(key: NamespacedKey): PersistentInteger<C> {
             return PersistentInteger(this, key)
         }
 
         /**
          * PersistentDataType.LONGを使ってDelegateする
          */
-        class PersistentLong(private val d: DelegatedItemStack, private val key: NamespacedKey) {
-            operator fun getValue(thisRef: Any?, property: KProperty<*>): Long? {
+        class PersistentLong<C:DelegatedItemStack>(private val d: DelegatedItemStack, private val key: NamespacedKey) {
+            operator fun getValue(thisRef: C, property: KProperty<*>): Long? {
                 return d.stack.itemMeta?.persistentDataContainer?.get(key, PersistentDataType.LONG)
             }
 
-            operator fun setValue(thisRef: Any?, property: KProperty<*>, value: Long) {
+            operator fun setValue(thisRef: C, property: KProperty<*>, value: Long) {
                 d.stack.itemMeta?.persistentDataContainer?.set(key, PersistentDataType.LONG, value)
             }
         }
 
-        fun DelegatedItemStack.persistentLong(key: NamespacedKey): PersistentLong {
+        fun <C:DelegatedItemStack> C.persistentLong(key: NamespacedKey): PersistentLong<C> {
             return PersistentLong(this, key)
         }
 
@@ -71,13 +71,13 @@ open class DelegatedItemStack(val stack: ItemStack) {
             /**
              * 標準のItemMetaを使ってDelegateする
              */
-            class ItemMeta(private val d: DelegatedItemStack) {
-                operator fun getValue(thisRef: Any?, property: KProperty<*>): org.bukkit.inventory.meta.ItemMeta {
+            class ItemMeta<C:DelegatedItemStack>(private val d: DelegatedItemStack) {
+                operator fun getValue(thisRef: C, property: KProperty<*>): org.bukkit.inventory.meta.ItemMeta {
                     return d.stack.itemMeta
                 }
 
                 operator fun setValue(
-                    thisRef: Any?,
+                    thisRef: C,
                     property: KProperty<*>,
                     value: org.bukkit.inventory.meta.ItemMeta
                 ) {
@@ -85,20 +85,20 @@ open class DelegatedItemStack(val stack: ItemStack) {
                 }
             }
 
-            fun DelegatedItemStack.itemMeta(): ItemMeta {
+            fun <C:DelegatedItemStack> C.itemMeta(): ItemMeta<C> {
                 return ItemMeta(this)
             }
 
             /**
              * MapMetaを使ってDelegateする
              */
-            class MapMeta(private val d: DelegatedItemStack) {
-                operator fun getValue(thisRef: Any?, property: KProperty<*>): org.bukkit.inventory.meta.MapMeta? {
+            class MapMeta<C:DelegatedItemStack>(private val d: DelegatedItemStack) {
+                operator fun getValue(thisRef: C, property: KProperty<*>): org.bukkit.inventory.meta.MapMeta? {
                     return d.stack.itemMeta as? org.bukkit.inventory.meta.MapMeta
                 }
 
                 operator fun setValue(
-                    thisRef: Any?,
+                    thisRef: C,
                     property: KProperty<*>,
                     value: org.bukkit.inventory.meta.MapMeta
                 ) {
@@ -106,7 +106,7 @@ open class DelegatedItemStack(val stack: ItemStack) {
                 }
             }
 
-            fun DelegatedItemStack.mapMeta(): MapMeta {
+            fun <C:DelegatedItemStack> C.mapMeta(): MapMeta<C> {
                 return MapMeta(this)
             }
         }
