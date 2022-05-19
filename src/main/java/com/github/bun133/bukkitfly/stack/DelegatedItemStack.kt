@@ -8,7 +8,7 @@ import kotlin.reflect.KProperty
 /**
  * アイテムスタックのデータ等を'by'で委譲することができるクラス
  */
-class DelegatedItemStack(val stack: ItemStack) {
+open class DelegatedItemStack(val stack: ItemStack) {
     /**
      * アイテムスタックのデータ等を'by'で委譲するための実態クラス
      */
