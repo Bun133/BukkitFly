@@ -4,6 +4,8 @@ BukkitFlyはBukkitプラグイン作成時に、何度も書いている処理�
 
 # Getting Started
 
+[![](https://jitpack.io/v/Bun133/BukkitFly.svg)](https://jitpack.io/#Bun133/BukkitFly)
+
 ```
 <repositories>
 	<repository>
