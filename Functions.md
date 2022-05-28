@@ -6,6 +6,7 @@
 ・[Advancement](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#advancement)
 ・[ItemStack](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#itemstack)
 ・[Inventory](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#inventory)
+・[Effect](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#effect)
 
 # HumanEntity
 
@@ -43,3 +44,9 @@
 | ファイル名                                                                                                                                              | ファイル内容                             |
 |----------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------|
 | [Inventory.ForceRemover](https://github.com/Bun133/BukkitFly/blob/main/src/main/java/com/github/bun133/bukkitfly/inventory/player/ForceRemover.kt) | PlayerQuitEventでremoveできない現象を回避します |
+
+# Effect
+
+| ファイル名                                                                                                                             | ファイル内容           |
+|-----------------------------------------------------------------------------------------------------------------------------------|------------------|
+| [Effect.LineEffect](https://github.com/Bun133/BukkitFly/blob/main/src/main/java/com/github/bun133/bukkitfly/effect/LineEffect.kt) | 直線状にエフェクトを発生させます |
