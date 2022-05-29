@@ -4,9 +4,11 @@ import org.bukkit.Location
 import org.bukkit.World
 
 /**
- * World内の直線を表すクラス
+ * 直線を表すクラス
  */
-class Line(val from: Location, val to: Location) {
+class Line(val from: Pos, val to: Pos) {
+    constructor(x1:Double, y1:Double, z1:Double, x2:Double, y2:Double, z2:Double) : this(Pos(x1, y1, z1), Pos(x2, y2, z2))
+
     /**
      * @throws IllegalArgumentException if from and to are not in the same world
      */
@@ -18,7 +20,7 @@ class Line(val from: Location, val to: Location) {
      * [from]から[to]までの間で[step]ブロックごとに[Location]を取ってくる
      * @note [from]は含まれない、[to]は[step]によっては含まれることもある
      */
-    fun frequent(step: Double, world: World = from.world): List<Location> {
+    fun frequent(step: Double, world: World): List<Location> {
         val result = mutableListOf<Location>()
         val distance = distance()
         val stepCount = distance / step
@@ -39,5 +41,5 @@ class Line(val from: Location, val to: Location) {
 }
 
 fun Location.lineTo(to: Location): Line {
-    return Line(this, to)
+    return Line(Pos(this), Pos(to))
 }

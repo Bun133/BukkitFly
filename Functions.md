@@ -50,3 +50,4 @@
 | ファイル名                                                                                                                             | ファイル内容           |
 |-----------------------------------------------------------------------------------------------------------------------------------|------------------|
 | [Effect.LineEffect](https://github.com/Bun133/BukkitFly/blob/main/src/main/java/com/github/bun133/bukkitfly/effect/LineEffect.kt) | 直線状にエフェクトを発生させます |
+| [Effect.BoxEffect](https://github.com/Bun133/BukkitFly/blob/main/src/main/java/com/github/bun133/bukkitfly/effect/BoxEffect.kt)   | 箱状にエフェクトを発生させます  |
