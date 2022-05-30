@@ -1,23 +1,21 @@
-package com.github.bun133.bukkitfly.effect
+package com.github.bun133.bukkitfly.particle
 
 import com.github.bun133.bukkitfly.util.Line
-import org.bukkit.Effect
 import org.bukkit.Location
+import org.bukkit.Particle
 import org.bukkit.World
 
 /**
  * Minecraftのエフェクトを直線にしたものを表すクラス
  *
- * @param samplingRate サンプリングレート(何ブロック毎に1つのエフェクトを発生させるか)
- * @param forceEnds 両端を強制的にエフェクトを発生させるか
- * @param data [World#playEffect]に渡すデータ
+ * @param samplingRate サンプリングレート(何ブロック毎に1つのパーティクルを発生させるか)
+ * @param forceEnds 両端で強制的にパーティクルを発生させるか
  */
-class LineEffect(
+class LineParticle(
     val line: Line,
-    val effect: Effect,
+    val particle: Particle,
     val samplingRate: Double,
     val forceEnds: Boolean = true,
-    val data: Int = 0
 ) {
     /**
      * [line]に沿ってエフェクトを発生させる
@@ -25,18 +23,18 @@ class LineEffect(
     fun playEffect(world: World) {
         val locations = locations(world)
         locations.forEach {
-            it.world.playEffect(it, effect, data)
+            it.world.spawnParticle(particle, it, 1)
         }
     }
 
-    fun locations(world:World): List<Location> {
+    fun locations(world: World): List<Location> {
         val list = mutableListOf<Location>()
         if (forceEnds) {
             list.add(line.from.toLocation(world))
             list.add(line.to.toLocation(world))
         }
 
-        list.addAll(line.frequent(samplingRate,world))
+        list.addAll(line.frequent(samplingRate, world))
 
         return list
     }

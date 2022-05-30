@@ -1,7 +1,8 @@
-package com.github.bun133.bukkitfly.effect
+package com.github.bun133.bukkitfly.particle
 
 import com.github.bun133.bukkitfly.util.Box
 import org.bukkit.Effect
+import org.bukkit.Particle
 import org.bukkit.World
 
 /**
@@ -10,16 +11,15 @@ import org.bukkit.World
  * @param forceEnds 両端を強制的にエフェクトを発生させるか
  * @param data [World#playEffect]に渡すデータ
  */
-class BoxEffect(
+class BoxParticle(
     box: Box,
-    val effect: Effect,
+    val particle: Particle,
     val samplingRate: Double,
     val forceEnds: Boolean = true,
-    val data: Int = 0
 ) {
-    val lineEffects = box.lines().map { LineEffect(it, effect, samplingRate, forceEnds, data) }
+    val lineParticles = box.lines().map { LineParticle(it, particle, samplingRate, forceEnds) }
 
     fun playEffect(world: World) {
-        lineEffects.forEach { it.playEffect(world) }
+        lineParticles.forEach { it.playEffect(world) }
     }
 }
