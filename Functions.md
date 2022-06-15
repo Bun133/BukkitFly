@@ -7,6 +7,7 @@
 ・[ItemStack](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#itemstack)
 ・[Inventory](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#inventory)
 ・[Effect](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#effect)
+・[Server](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#server)
 
 # HumanEntity
 
@@ -51,3 +52,10 @@
 |-----------------------------------------------------------------------------------------------------------------------------------|------------------|
 | [Effect.LineEffect](https://github.com/Bun133/BukkitFly/blob/main/src/main/java/com/github/bun133/bukkitfly/effect/LineEffect.kt) | 直線状にエフェクトを発生させます |
 | [Effect.BoxEffect](https://github.com/Bun133/BukkitFly/blob/main/src/main/java/com/github/bun133/bukkitfly/effect/BoxEffect.kt)   | 箱状にエフェクトを発生させます  |
+
+# Server
+
+| ファイル名                                                                                                                                       | ファイル内容                     |
+|---------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
+| [Server.PluginPredictor](https://github.com/Bun133/BukkitFly/blob/main/src/main/java/com/github/bun133/bukkitfly/server/PluginPredictor.kt) | クラスローダーからプラグインインスタンスを推測します |
+| [Server.BanUtil](https://github.com/Bun133/BukkitFly/blob/main/src/main/java/com/github/bun133/bukkitfly/server/BanUtil.kt)                 | プレイヤーのBANの処理を簡略化します        |
