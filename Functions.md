@@ -8,6 +8,7 @@
 ・[Inventory](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#inventory)
 ・[Effect](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#effect)
 ・[Server](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#server)
+・[Display](https://github.com/Bun133/BukkitFly/blob/main/Functions.md#display)
 
 # HumanEntity
 
@@ -59,3 +60,10 @@
 |---------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
 | [Server.PluginPredictor](https://github.com/Bun133/BukkitFly/blob/main/src/main/java/com/github/bun133/bukkitfly/server/PluginPredictor.kt) | クラスローダーからプラグインインスタンスを推測します |
 | [Server.BanUtil](https://github.com/Bun133/BukkitFly/blob/main/src/main/java/com/github/bun133/bukkitfly/server/BanUtil.kt)                 | プレイヤーのBANの処理を簡略化します        |
+
+# Display
+
+| ファイル名                                                                                                                                   | ファイル内容                 |
+|-----------------------------------------------------------------------------------------------------------------------------------------|------------------------|
+| [MapDisplay](https://github.com/Bun133/BukkitFly/blob/main/src/main/java/com/github/bun133/bukkitfly/display/MapDisplay.kt)             | 複数のマップスタックをDisplayにします |
+| [MapSingleDisplay](https://github.com/Bun133/BukkitFly/blob/main/src/main/java/com/github/bun133/bukkitfly/display/MapSingleDisplay.kt) | 一つのマップスタックをDisplayにします |
